@@ -1,0 +1,116 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product catalog</title>
+    <link rel="stylesheet" href="{% static 'catalog/catalog.css' %}">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to catalog</a>
+    <header class="page-header">
+        <div class="container">
+            <h1>Product catalog</h1>
+            <p>Browse products by name, description, category, and tags.</p>
+        </div>
+    </header>
+    <main id="main-content" class="container catalog-layout">
+        <section class="filters" aria-labelledby="filters-heading">
+            <h2 id="filters-heading">Search and filter</h2>
+            <form method="get" action="{% url 'catalog:product_list' %}" id="catalog-filters">
+                <input type="hidden" name="category_page" value="{{ category_lookup.page }}" id="category-page">
+                <input type="hidden" name="tag_page" value="{{ tag_lookup.page }}" id="tag-page">
+                {% if form.errors %}
+                    <div class="error-summary" role="alert">
+                        <p>Please correct the filters below and search again.</p>
+                        {{ form.non_field_errors }}
+                        <ul>
+                            {% for field in form %}
+                                {% if field.errors %}
+                                    <li><a href="#{% if field.name == 'tags' %}id_tags{% elif field.name == 'category' %}id_category{% else %}{{ field.id_for_label }}{% endif %}">{{ field.label }}: {{ field.errors|join:" " }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+                <div class="form-field">
+                    <label for="{{ form.q.id_for_label }}">Search name or description</label>
+                    {{ form.q.errors }}
+                    {{ form.q }}
+                    <p id="id_q_helptext" class="hint">{{ form.q.help_text }}</p>
+                </div>
+                <fieldset id="id_category" class="category-filters choice-window" tabindex="-1" aria-describedby="category-status{% if form.category.errors %} id_category_error{% endif %}"{% if form.category.errors %} aria-invalid="true"{% endif %}>
+                    <legend>Category</legend>
+                    <label for="{{ form.category_search.id_for_label }}" class="choice-search-label">Find categories</label>
+                    {{ form.category_search.errors }}
+                    <input type="search" id="{{ form.category_search.id_for_label }}" name="category_search" value="{{ form.category_search.value|default:'' }}" maxlength="200" aria-describedby="category-status{% if form.category_search.errors %} id_category_search_error{% endif %}"{% if form.category_search.errors %} aria-invalid="true"{% endif %}>
+                    <div class="choice-actions">
+                        <button type="submit" name="category_page" value="1" id="category-search-submit">Find categories</button>
+                        <button type="submit" name="category_page" value="{{ category_lookup.page|add:'-1' }}" id="category-previous"{% if not category_lookup.has_previous %} disabled{% endif %}>Previous categories</button>
+                        <button type="submit" name="category_page" value="{{ category_lookup.page|add:'1' }}" id="category-next"{% if not category_lookup.has_next %} disabled{% endif %}>Next categories</button>
+                    </div>
+                    <p id="category-status" class="hint choice-status">Category choices, page {{ category_lookup.page }}.{% if not category_lookup.results %} No matching categories.{% endif %} The selected category stays available.</p>
+                    {{ form.category.errors }}
+                    <div class="category-choices">
+                        {% for radio in form.category %}
+                            <div class="category-choice">{{ radio }}</div>
+                        {% endfor %}
+                    </div>
+                </fieldset>
+                <fieldset id="id_tags" class="tag-filters choice-window" tabindex="-1" aria-describedby="tags-hint{% if form.tags.errors %} id_tags_error{% endif %}"{% if form.tags.errors %} aria-invalid="true"{% endif %}>
+                    <legend>Tags</legend>
+                    <p id="tags-hint" class="hint">Products must have ALL selected tags. Select up to 20. Leave all unchecked to include products with any or no tags. Selected tags stay available; uncheck a tag to remove it.</p>
+                    {% if form.tags.errors %}
+                        <ul id="id_tags_error" class="errorlist">
+                            {% for error in form.tags.errors %}<li>{{ error }}</li>{% endfor %}
+                        </ul>
+                    {% endif %}
+                    <label for="{{ form.tag_search.id_for_label }}" class="choice-search-label">Find tags</label>
+                    {{ form.tag_search.errors }}
+                    <input type="search" id="{{ form.tag_search.id_for_label }}" name="tag_search" value="{{ form.tag_search.value|default:'' }}" maxlength="200" aria-describedby="tag-status{% if form.tag_search.errors %} id_tag_search_error{% endif %}"{% if form.tag_search.errors %} aria-invalid="true"{% endif %}>
+                    <div class="choice-actions">
+                        <button type="submit" name="tag_page" value="1" id="tag-search-submit">Find tags</button>
+                        <button type="submit" name="tag_page" value="{{ tag_lookup.page|add:'-1' }}" id="tag-previous"{% if not tag_lookup.has_previous %} disabled{% endif %}>Previous tags</button>
+                        <button type="submit" name="tag_page" value="{{ tag_lookup.page|add:'1' }}" id="tag-next"{% if not tag_lookup.has_next %} disabled{% endif %}>Next tags</button>
+                    </div>
+                    <p id="tag-status" class="hint choice-status">Tag choices, page {{ tag_lookup.page }}.{% if not tag_lookup.results %} No matching tags.{% endif %}</p>
+                    <div id="selected-tags" class="tag-group" role="group" aria-labelledby="selected-tags-heading">
+                        <h3 id="selected-tags-heading">Selected tags</h3>
+                        <div class="tag-choices">
+                            {% for checkbox in form.tags %}
+                                {% if checkbox.data.selected %}
+                                    <div class="tag-choice">{{ checkbox }}</div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div id="matching-tags" class="tag-group" role="group" aria-labelledby="matching-tags-heading">
+                        <h3 id="matching-tags-heading">Matching tags</h3>
+                        <p class="hint">Selected matches are listed above.</p>
+                        <div class="tag-choices">
+                            {% for checkbox in form.tags %}
+                                {% if not checkbox.data.selected %}
+                                    <div class="tag-choice">{{ checkbox }}</div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </fieldset>
+                <p class="hint filter-submit-hint">Every search, choice-page button, and Apply filters reloads the page, applies all current filters, and returns to the first product page. Checked tags and the selected category are kept.</p>
+                <div class="form-actions">
+                    <button type="submit" data-filter-apply>Apply filters</button>
+                    <a class="reset-link" href="{% url 'catalog:product_list' %}" data-filter-clear>Clear filters</a>
+                </div>
+            </form>
+        </section>
+        <section class="results" aria-labelledby="results-heading">
+            <h2 id="results-heading">Products</h2>
+            {% include 'catalog/_product_results.html' with products=products invalid_filters=form.errors only %}
+            {% if not form.errors %}
+                {% include 'catalog/_pagination.html' %}
+            {% endif %}
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<nav class="pagination" aria-label="Product pages">
+    <p class="page-summary">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }} · {{ page_obj.paginator.count }} product{{ page_obj.paginator.count|pluralize }}</p>
+    <div class="pagination-links">
+        {% if page_obj.has_previous %}
+            <a rel="prev" href="{% querystring page=page_obj.previous_page_number %}">Previous products</a>
+        {% endif %}
+        {% if page_obj.has_next %}
+            <a rel="next" href="{% querystring page=page_obj.next_page_number %}">Next products</a>
+        {% endif %}
+    </div>
+</nav>

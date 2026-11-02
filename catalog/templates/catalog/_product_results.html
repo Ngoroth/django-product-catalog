@@ -1,0 +1,40 @@
+{% if invalid_filters %}
+    <div class="empty-state">
+        <p>No results are shown while the filters contain errors.</p>
+        <p>Correct the filters or use Clear filters to browse all products.</p>
+    </div>
+{% else %}
+    <ul class="product-list">
+        {% for product in products %}
+            <li class="product-card">
+                <article aria-labelledby="product-{{ product.pk }}-name">
+                    <h3 id="product-{{ product.pk }}-name">{{ product.name }}</h3>
+                    <div class="product-description">{{ product.description|linebreaks }}</div>
+                    <dl class="product-details">
+                        <div>
+                            <dt>Category</dt>
+                            <dd>{{ product.category.name }}</dd>
+                        </div>
+                        <div>
+                            <dt>Tags</dt>
+                            <dd>
+                                <ul class="product-tags" aria-label="Product tags">
+                                    {% for tag in product.tags.all %}
+                                        <li>{{ tag.name }}</li>
+                                    {% empty %}
+                                        <li class="no-tags">No tags</li>
+                                    {% endfor %}
+                                </ul>
+                            </dd>
+                        </div>
+                    </dl>
+                </article>
+            </li>
+        {% empty %}
+            <li class="empty-state">
+                <p>No products found.</p>
+                <p>Try a different search, select fewer filters, or use Clear filters to browse all products.</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

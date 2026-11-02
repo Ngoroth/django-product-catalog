@@ -1,0 +1,782 @@
+[
+{
+  "model": "catalog.category",
+  "pk": 1,
+  "fields": {
+    "name": "Tools"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 2,
+  "fields": {
+    "name": "Electrical"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 3,
+  "fields": {
+    "name": "Plumbing"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 4,
+  "fields": {
+    "name": "Safety"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 5,
+  "fields": {
+    "name": "Fasteners"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 1,
+  "fields": {
+    "name": "Cordless"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 2,
+  "fields": {
+    "name": "Outdoor"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 3,
+  "fields": {
+    "name": "Indoor"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 4,
+  "fields": {
+    "name": "Heavy Duty"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 5,
+  "fields": {
+    "name": "Lightweight"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 6,
+  "fields": {
+    "name": "Portable"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 7,
+  "fields": {
+    "name": "Professional"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 8,
+  "fields": {
+    "name": "DIY"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 9,
+  "fields": {
+    "name": "Weather Resistant"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 10,
+  "fields": {
+    "name": "Ergonomic"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 1,
+  "fields": {
+    "name": "Cordless Drill",
+    "description": "Compact drill for indoor furniture assembly.",
+    "category": 1,
+    "tags": [
+      1,
+      8,
+      10,
+      3
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 2,
+  "fields": {
+    "name": "Outdoor Drill",
+    "description": "Weather resistant cordless drill for outdoor construction.",
+    "category": 1,
+    "tags": [
+      1,
+      2,
+      7,
+      9
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 3,
+  "fields": {
+    "name": "Precision Driver",
+    "description": "A lightweight drill driver for indoor repairs.",
+    "category": 1,
+    "tags": [
+      8,
+      3,
+      5
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 4,
+  "fields": {
+    "name": "Claw Hammer",
+    "description": "Heavy duty hammer with an ergonomic grip.",
+    "category": 1,
+    "tags": [
+      10,
+      4,
+      7
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 5,
+  "fields": {
+    "name": "Indoor Extension Cord",
+    "description": "Extension cord for indoor lamps and appliances.",
+    "category": 2,
+    "tags": [
+      8,
+      3
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 6,
+  "fields": {
+    "name": "Outdoor Extension Cord",
+    "description": "Weather resistant extension cord for garden tools.",
+    "category": 2,
+    "tags": [
+      4,
+      2,
+      9
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 7,
+  "fields": {
+    "name": "Portable Work Light",
+    "description": "Cordless LED work light for indoor and outdoor jobs.",
+    "category": 2,
+    "tags": [
+      1,
+      3,
+      2,
+      6
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 8,
+  "fields": {
+    "name": "Cable Clips",
+    "description": "Clips for routing electrical cable along walls.",
+    "category": 2,
+    "tags": []
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 9,
+  "fields": {
+    "name": "Adjustable Pipe Wrench",
+    "description": "Heavy duty wrench for professional pipe installation.",
+    "category": 3,
+    "tags": [
+      4,
+      7
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 10,
+  "fields": {
+    "name": "Garden Hose Connector",
+    "description": "Weather resistant connector for outdoor water hoses.",
+    "category": 3,
+    "tags": [
+      8,
+      2,
+      9
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 11,
+  "fields": {
+    "name": "Drain Cleaning Tool",
+    "description": "Portable tool for clearing indoor sink drains.",
+    "category": 3,
+    "tags": [
+      8,
+      3,
+      6
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 12,
+  "fields": {
+    "name": "Pipe Cutter",
+    "description": "Lightweight cutter with an ergonomic handle for copper pipe.",
+    "category": 3,
+    "tags": [
+      10,
+      5,
+      7
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 13,
+  "fields": {
+    "name": "Safety Glasses",
+    "description": "Lightweight eye protection for workshop tasks.",
+    "category": 4,
+    "tags": [
+      8,
+      3,
+      5
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 14,
+  "fields": {
+    "name": "Work Gloves",
+    "description": "Heavy duty gloves for outdoor construction.",
+    "category": 4,
+    "tags": [
+      4,
+      2,
+      7
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 15,
+  "fields": {
+    "name": "Hearing Protectors",
+    "description": "Portable hearing protection for noisy indoor workshops.",
+    "category": 4,
+    "tags": [
+      3,
+      6,
+      7
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 16,
+  "fields": {
+    "name": "Reflective Vest",
+    "description": "Lightweight weather resistant vest for outdoor visibility.",
+    "category": 4,
+    "tags": [
+      5,
+      2,
+      9
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 17,
+  "fields": {
+    "name": "Wood Screws",
+    "description": "General purpose screws for indoor furniture assembly.",
+    "category": 5,
+    "tags": [
+      8,
+      3
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 18,
+  "fields": {
+    "name": "Deck Screws",
+    "description": "Weather resistant screws for outdoor decking.",
+    "category": 5,
+    "tags": [
+      4,
+      2,
+      9
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 19,
+  "fields": {
+    "name": "Wall Anchors",
+    "description": "Lightweight anchors for indoor shelves.",
+    "category": 5,
+    "tags": [
+      8,
+      3,
+      5
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 20,
+  "fields": {
+    "name": "Hex Bolts",
+    "description": "Heavy duty bolts for professional equipment assembly.",
+    "category": 5,
+    "tags": [
+      4,
+      7
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 21,
+  "fields": {
+    "name": "Adjustable Spanner",
+    "description": "Versatile jaw wrench for tightening household nuts and fittings.",
+    "category": 1,
+    "tags": [8, 10]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 22,
+  "fields": {
+    "name": "Carpenter Square",
+    "description": "Steel layout square for checking right angles on timber frames.",
+    "category": 1,
+    "tags": [4, 7]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 23,
+  "fields": {
+    "name": "Folding Hex Key Set",
+    "description": "Pocket hex keys for furniture bolts and bicycle adjustments.",
+    "category": 1,
+    "tags": [5, 6, 8]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 24,
+  "fields": {
+    "name": "Hand Saw",
+    "description": "Crosscut saw with a shaped handle for cutting timber by hand.",
+    "category": 1,
+    "tags": [7, 10]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 25,
+  "fields": {
+    "name": "Magnetic Level",
+    "description": "Aluminium spirit level that holds onto steel framing.",
+    "category": 1,
+    "tags": [3, 5, 7]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 26,
+  "fields": {
+    "name": "Ratchet Socket Set",
+    "description": "Durable sockets and a reversible ratchet for equipment maintenance.",
+    "category": 1,
+    "tags": [4, 6, 7]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 27,
+  "fields": {
+    "name": "Retractable Tape Measure",
+    "description": "Locking measuring tape for checking room and workpiece dimensions.",
+    "category": 1,
+    "tags": [5, 6, 8]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 28,
+  "fields": {
+    "name": "Utility Knife",
+    "description": "Replaceable blade knife with a comfortable grip for trimming sheet material.",
+    "category": 1,
+    "tags": [6, 7, 10]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 29,
+  "fields": {
+    "name": "Battery Lantern",
+    "description": "Rechargeable area lantern for campsite repairs and power outages.",
+    "category": 2,
+    "tags": [1, 2, 6]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 30,
+  "fields": {
+    "name": "Cable Ties",
+    "description": "Nylon ties for bundling indoor wiring behind desks.",
+    "category": 2,
+    "tags": [3, 8]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 31,
+  "fields": {
+    "name": "Digital Multimeter",
+    "description": "Handheld meter for checking voltage and continuity during indoor repairs.",
+    "category": 2,
+    "tags": [3, 6, 7]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 32,
+  "fields": {
+    "name": "Insulated Screwdriver",
+    "description": "Comfortable insulated handle for electrical terminal installation.",
+    "category": 2,
+    "tags": [7, 10]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 33,
+  "fields": {
+    "name": "Junction Box",
+    "description": "Sealed housing for protected wiring connections on exterior walls.",
+    "category": 2,
+    "tags": [2, 9]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 34,
+  "fields": {
+    "name": "Plug Adapter",
+    "description": "Compact adapter for connecting household appliances indoors.",
+    "category": 2,
+    "tags": [3, 5, 8]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 35,
+  "fields": {
+    "name": "Terminal Block",
+    "description": "Connector strip for organizing low-voltage control wiring.",
+    "category": 2,
+    "tags": [3, 7]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 36,
+  "fields": {
+    "name": "Wire Stripper",
+    "description": "Spring-loaded tool for removing wire insulation with less hand effort.",
+    "category": 2,
+    "tags": [5, 7, 10]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 37,
+  "fields": {
+    "name": "Basin Wrench",
+    "description": "Long-reach wrench for tightening tap nuts beneath indoor sinks.",
+    "category": 3,
+    "tags": [3, 7]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 38,
+  "fields": {
+    "name": "Compression Elbow",
+    "description": "Brass elbow fitting for turning a copper water supply line.",
+    "category": 3,
+    "tags": [3, 7]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 39,
+  "fields": {
+    "name": "Hose Repair Coupling",
+    "description": "Reusable coupling for joining damaged outdoor garden hose sections.",
+    "category": 3,
+    "tags": [2, 8, 9]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 40,
+  "fields": {
+    "name": "Pipe Insulation Sleeve",
+    "description": "Foam sleeve for reducing heat loss along indoor hot water pipes.",
+    "category": 3,
+    "tags": [3, 5, 8]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 41,
+  "fields": {
+    "name": "Plunger",
+    "description": "Rubber cup plunger with a shaped grip for clearing household sinks.",
+    "category": 3,
+    "tags": [3, 8, 10]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 42,
+  "fields": {
+    "name": "Tap Washer Assortment",
+    "description": "Replacement rubber washers for repairing dripping indoor taps.",
+    "category": 3,
+    "tags": [3, 8]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 43,
+  "fields": {
+    "name": "Thread Seal Tape",
+    "description": "Sealing tape for threaded water fittings during pipe installation.",
+    "category": 3,
+    "tags": [5, 7]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 44,
+  "fields": {
+    "name": "Water Shutoff Valve",
+    "description": "Durable isolation valve for servicing domestic water supply lines.",
+    "category": 3,
+    "tags": [4, 7]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 45,
+  "fields": {
+    "name": "Bump Cap",
+    "description": "Light head protection for low-clearance indoor maintenance spaces.",
+    "category": 4,
+    "tags": [3, 5, 7]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 46,
+  "fields": {
+    "name": "Dust Mask",
+    "description": "Disposable mask for dusty indoor cleanup and sanding tasks.",
+    "category": 4,
+    "tags": [3, 5, 8]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 47,
+  "fields": {
+    "name": "Face Shield",
+    "description": "Adjustable full-face visor for professional workshop protection.",
+    "category": 4,
+    "tags": [3, 7, 10]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 48,
+  "fields": {
+    "name": "First Aid Pouch",
+    "description": "Portable pouch for keeping basic first aid supplies close to the work area.",
+    "category": 4,
+    "tags": [5, 6]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 49,
+  "fields": {
+    "name": "Knee Pads",
+    "description": "Cushioned pads with adjustable straps for extended flooring work.",
+    "category": 4,
+    "tags": [3, 7, 10]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 50,
+  "fields": {
+    "name": "Safety Cone",
+    "description": "Weather resistant cone for marking temporary outdoor work zones.",
+    "category": 4,
+    "tags": [2, 6, 9]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 51,
+  "fields": {
+    "name": "Tool Lanyard",
+    "description": "Heavy duty tether for securing hand tools during overhead work.",
+    "category": 4,
+    "tags": [4, 7]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 52,
+  "fields": {
+    "name": "Waterproof Overshoes",
+    "description": "Slip-on covers for keeping footwear dry during exterior maintenance.",
+    "category": 4,
+    "tags": [2, 5, 9]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 53,
+  "fields": {
+    "name": "Carriage Bolts",
+    "description": "Round-head bolts for securing timber gates and garden structures.",
+    "category": 5,
+    "tags": [2, 4, 9]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 54,
+  "fields": {
+    "name": "Furniture Dowels",
+    "description": "Wooden locating pins for aligning indoor cabinet joints.",
+    "category": 5,
+    "tags": [3, 8]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 55,
+  "fields": {
+    "name": "Lock Nuts",
+    "description": "Vibration-resistant nuts for professional machinery assembly.",
+    "category": 5,
+    "tags": [4, 7]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 56,
+  "fields": {
+    "name": "Masonry Anchors",
+    "description": "Heavy duty fixings for mounting exterior brackets into brickwork.",
+    "category": 5,
+    "tags": [2, 4, 7]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 57,
+  "fields": {
+    "name": "Panel Pins",
+    "description": "Fine steel pins for attaching lightweight indoor trim.",
+    "category": 5,
+    "tags": [3, 5, 8]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 58,
+  "fields": {
+    "name": "Rivet Assortment",
+    "description": "Mixed aluminium rivets for joining thin workshop sheet material.",
+    "category": 5,
+    "tags": [3, 5, 7]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 59,
+  "fields": {
+    "name": "Spring Washers",
+    "description": "Steel washers for maintaining tension in equipment bolted joints.",
+    "category": 5,
+    "tags": [4, 7]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 60,
+  "fields": {
+    "name": "Wing Nuts",
+    "description": "Hand-tightened nuts for removable covers and temporary fixtures.",
+    "category": 5,
+    "tags": [5, 8]
+  }
+}
+]
